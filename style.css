@@ -102,37 +102,44 @@ header {
 .nav-link a:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
-
 .menu-icon {
   display: none;
-  flex-direction: column;
-  gap: 6px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 32px;
   height: 32px;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #403f3d;
+  border-radius: 50%;
+  position: relative;
 }
 
 .menu-icon span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  line-height: 1.5;
+  position: absolute;
+  width: 16px;
+  height: 1px;
   background-color: #403f3d;
+  border-radius: 2px;
   transition: all 0.3s ease;
 }
 
+.menu-icon span:nth-child(1) {
+  top: 11px; /* move up */
+}
+
+.menu-icon span:nth-child(2) {
+  bottom: 11px;
+}
+
 .menu-icon.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .menu-icon.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-icon.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  /* bottom: auto; */
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 /* headeri chans sworad? */
@@ -143,7 +150,6 @@ header {
   width: 100%;
   height: calc(100vh - 72px);
   background-color: #e1d4c9;
-  background-color: red;
   transition: right 0.4s ease;
   z-index: 99;
   display: flex;
@@ -442,7 +448,6 @@ header {
   display: grid;
   gap: 40px;
   height: 1060px;
-  /* max-width: 1360px; */
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
 }
@@ -620,7 +625,6 @@ footer {
   display: flex;
   margin-top: 35px;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   gap: 20px;
 }
@@ -705,7 +709,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .container {
     padding: 0 16px;
   }
@@ -794,7 +798,7 @@ footer {
   }
 
   .app-content {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 40px;
   }
 
@@ -808,7 +812,7 @@ footer {
   }
 
   .app-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 16px;
   }
 
@@ -818,7 +822,7 @@ footer {
   }
 
   .footer-content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 40px;
   }
 

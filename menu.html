@@ -101,14 +101,18 @@
           <div class="products-grid" id="productsGrid"></div>
 
           <div class="load-more-container" id="loadMoreContainer">
-            <button class="load-more-button" id="loadMoreBtn">Load More</button>
+            <button class="load-more-button" id="loadMoreBtn"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+<rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"/>
+<path d="M39.8883 31.5C39.1645 36.3113 35.013 40 30 40C24.4772 40 20 35.5228 20 30C20 24.4772 24.4772 20 30 20C34.1006 20 37.6248 22.4682 39.1679 26" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M35 26H39.4C39.7314 26 40 25.7314 40 25.4V21" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>
           </div>
         </section>
 
         <!-- Modal -->
         <div class="modal-overlay" id="modalOverlay">
           <div class="modal-content" id="modalContent">
-            <button class="close-button" id="closeButton">&times;</button>
+            <!-- <button class="close-button" id="closeButton">&times;</button> -->
             <img class="modal-image" id="modalImage" src="" alt="" />
             <div class="modal-details">
               <h3 class="modal-name" id="modalName"></h3>
@@ -469,162 +473,168 @@
         }
       }
 
-      function openModal(product) {
-        currentProduct = product;
-        basePrice = parseFloat(product.price);
-        selectedSize = "s";
-        selectedAdditives = [];
+     function openModal(product) {
+  currentProduct = product;
+  basePrice = parseFloat(product.price);
+  selectedSize = "s";
+  selectedAdditives = [];
 
-        const modal = document.getElementById("modalOverlay");
-        const modalImage = document.getElementById("modalImage");
-        const modalName = document.getElementById("modalName");
-        const modalDescription = document.getElementById("modalDescription");
+  const modal = document.getElementById("modalOverlay");
+  const modalImage = document.getElementById("modalImage");
+  const modalName = document.getElementById("modalName");
+  const modalDescription = document.getElementById("modalDescription");
 
-        modalImage.src = product.image;
-        modalImage.alt = product.name;
-        modalName.textContent = product.name;
-        modalDescription.textContent = product.description;
+  modalImage.src = product.image;
+  modalImage.alt = product.name;
+  modalName.textContent = product.name;
+  modalDescription.textContent = product.description;
 
-        renderSizeOptions(product.sizes);
-        renderAdditiveOptions(product.additives);
-        updateTotalPrice();
+  renderSizeOptions(product.sizes);
+  renderAdditiveOptions(product.additives);
+  updateTotalPrice();
 
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      }
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
 
-      function renderSizeOptions(sizes) {
-        const sizeOptions = document.getElementById("sizeOptions");
-        sizeOptions.innerHTML = "";
+function renderSizeOptions(sizes) {
+  const sizeOptions = document.getElementById("sizeOptions");
+  sizeOptions.innerHTML = "";
 
-        Object.keys(sizes).forEach((sizeKey, index) => {
-          const size = sizes[sizeKey];
-          const btn = document.createElement("button");
-          btn.className = `option-button${index === 0 ? " selected" : ""}`;
-          btn.dataset.size = sizeKey;
-          btn.dataset.price = size["add-price"];
-          btn.innerHTML = `
-    
-<div class="option-icon">
-  ${sizeKey.charAt(0).toUpperCase()} <!-- This will show the first letter inside the circle -->
-</div>
-<div class="option-details">
-  <div class="option-name">${sizeKey.toUpperCase()}</div>
-  <div class="option-price">${size.size}</div>
-</div>
-
-    `;
-
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            document
-              .querySelectorAll("#sizeOptions .option-button")
-              .forEach((b) => b.classList.remove("selected"));
-            btn.classList.add("selected");
-            selectedSize = sizeKey;
-            updateTotalPrice();
-          });
-
-          sizeOptions.appendChild(btn);
-        });
-      }
-
-      function renderAdditiveOptions(additives) {
-        const additiveOptions = document.getElementById("additiveOptions");
-        additiveOptions.innerHTML = "";
-
-        additives.forEach((additive) => {
-          const btn = document.createElement("button");
-          btn.className = "option-button";
-          btn.dataset.additive = additive.name;
-          btn.dataset.price = additive["add-price"];
-          btn.innerHTML = `
+  Object.keys(sizes).forEach((sizeKey, index) => {
+    const size = sizes[sizeKey];
+    const btn = document.createElement("button");
+    btn.className = `option-button${index === 0 ? " selected" : ""}`;
+    btn.dataset.size = sizeKey;
+    btn.dataset.price = size["add-price"];
+    btn.innerHTML = `
       <div class="option-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <circle cx="12" cy="12" r="10" stroke-width="2"/>
-          <path d="M12 7v10M7 12h10" stroke-width="2"/>
-        </svg>
+        ${sizeKey.toUpperCase()}
       </div>
       <div class="option-details">
-        <div class="option-name">${additive.name}</div>
-        <div class="option-price">+$${parseFloat(additive["add-price"]).toFixed(
-          2
-        )}</div>
+        <span class="option-price">${size.size}</span>
       </div>
     `;
 
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            btn.classList.toggle("selected");
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      document
+        .querySelectorAll("#sizeOptions .option-button")
+        .forEach((b) => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      selectedSize = sizeKey;
+      updateTotalPrice();
+    });
 
-            const additiveName = additive.name;
-            const index = selectedAdditives.findIndex(
-              (a) => a.name === additiveName
-            );
+    sizeOptions.appendChild(btn);
+  });
+}
 
-            if (index > -1) {
-              selectedAdditives.splice(index, 1);
-            } else {
-              selectedAdditives.push(additive);
-            }
+function renderAdditiveOptions(additives) {
+  const additiveOptions = document.getElementById("additiveOptions");
+  additiveOptions.innerHTML = "";
 
-            updateTotalPrice();
-          });
+  additives.forEach((additive, index) => {
+    const btn = document.createElement("button");
+    btn.className = "option-button";
+    btn.dataset.additive = additive.name;
+    btn.dataset.price = additive["add-price"];
+    btn.innerHTML = `
+      <div class="option-icon">
+        ${index + 1}
+      </div>
+      <div class="option-details">
+        <span class="option-name">${additive.name}</span>
+      </div>
+    `;
 
-          additiveOptions.appendChild(btn);
-        });
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      btn.classList.toggle("selected");
+
+      const additiveName = additive.name;
+      const index = selectedAdditives.findIndex((a) => a.name === additiveName);
+
+      if (index > -1) {
+        selectedAdditives.splice(index, 1);
+      } else {
+        selectedAdditives.push(additive);
       }
 
-      function closeModal() {
-        const modal = document.getElementById("modalOverlay");
-        modal.classList.remove("active");
-        document.body.style.overflow = "";
-        currentProduct = null;
-        selectedSize = "s";
-        selectedAdditives = [];
+      updateTotalPrice();
+    });
+
+    additiveOptions.appendChild(btn);
+  });
+}
+
+function updateTotalPrice() {
+  if (!currentProduct) return;
+
+  let total = basePrice;
+
+  // Add size price
+  const sizePrice = parseFloat(
+    currentProduct.sizes[selectedSize]["add-price"] || 0
+  );
+  total += sizePrice;
+
+  // Add additive prices
+  selectedAdditives.forEach((additive) => {
+    total += parseFloat(additive["add-price"] || 0);
+  });
+
+  const totalPriceElement = document.getElementById("totalPrice");
+  if (totalPriceElement) {
+    totalPriceElement.textContent = `$${total.toFixed(2)}`;
+  }
+}
+
+function closeModal() {
+  const modal = document.getElementById("modalOverlay");
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+  currentProduct = null;
+  selectedSize = "s";
+  selectedAdditives = [];
+}
+
+function setupModal() {
+  const modal = document.getElementById("modalOverlay");
+  const closeButton = document.getElementById("closeButton");
+  const modalCloseBtn = document.getElementById("modalCloseBtn");
+  const modalContent = document.getElementById("modalContent");
+
+  if (closeButton) {
+    closeButton.addEventListener("click", closeModal);
+  }
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener("click", closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
       }
+    });
+  }
 
-      function updateTotalPrice() {
-        if (!currentProduct) return;
+  if (modalContent) {
+    modalContent.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
 
-        let total = basePrice;
-
-        const selectedSizeBtn = document.querySelector(
-          "#sizeOptions .option-button.selected"
-        );
-        if (selectedSizeBtn) {
-          total += parseFloat(selectedSizeBtn.dataset.price);
-        }
-
-        selectedAdditives.forEach((additive) => {
-          total += parseFloat(additive["add-price"]);
-        });
-
-        document.getElementById("totalPrice").textContent = `$${total.toFixed(
-          2
-        )}`;
-      }
-
-      function setupModal() {
-        const modal = document.getElementById("modalOverlay");
-        const closeButton = document.getElementById("closeButton");
-        const modalCloseBtn = document.getElementById("modalCloseBtn");
-        const modalContent = document.getElementById("modalContent");
-
-        closeButton.addEventListener("click", closeModal);
-        modalCloseBtn.addEventListener("click", closeModal);
-
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            closeModal();
-          }
-        });
-
-        modalContent.addEventListener("click", (e) => {
-          e.stopPropagation();
-        });
-      }
-
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+}
+     
       let resizeTimeout;
       window.addEventListener("resize", () => {
         clearTimeout(resizeTimeout);

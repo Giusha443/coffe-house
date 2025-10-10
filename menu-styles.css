@@ -8,9 +8,11 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 40px;
+  margin-top: 44px;
 }
 body {
+  font-family: "Inter", sans-serif;
+
   background-color: #e1d4c9;
 }
 .category-tab {
@@ -25,7 +27,7 @@ body {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .option-icon {
@@ -77,6 +79,8 @@ body {
   border: #c1b6ad solid 2px;
   max-height: 506px;
 }
+/*
+amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shesasworebelia*/
 
 .product-card:hover img {
   transform: scale(1.1);
@@ -96,24 +100,28 @@ body {
 }
 
 .product-name {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 12px;
   color: #403f3d;
 }
 
 .product-description {
-  font-size: 14px;
+  font-size: 15px;
   color: #403f3d;
+  font-weight: 600;
   opacity: 0.7;
   margin-bottom: 16px;
   line-height: 1.5;
 }
 .heading {
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 600;
   text-align: center;
   color: #403f3d;
+  width: 1360px;
+  /* height: 236px; */
+  padding: 0 286px 0;
 }
 .heading .italic {
   font-style: italic;
@@ -255,7 +263,6 @@ body {
 
 .option-title {
   font-size: 16px;
-  font-weight: 600;
   margin-bottom: 8px;
   color: #403f3d;
 }
@@ -351,6 +358,7 @@ body {
   color: #403f3d;
   opacity: 0.6;
   line-height: 1.5;
+  font-weight: 600;
   display: flex;
   align-items: flex-start;
   gap: 6px;
@@ -367,7 +375,7 @@ body {
   padding: 16px;
   background-color: transparent;
   color: #403f3d;
-  border: 2px solid #403f3d;
+  border: 1px solid #403f3d;
   border-radius: 100px;
   font-size: 16px;
   font-weight: 600;
@@ -379,71 +387,6 @@ body {
 .modal-close-btn:hover {
   background-color: #403f3d;
   color: #e1d4c9;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .modal-content {
-    flex-direction: column;
-    max-height: 85vh;
-    border-radius: 16px;
-  }
-  /* 
-  .modal-image {
-    width: 100%;
-    min-width: 100%;
-    height: 250px;
-    border-radius: 16px 16px 0 0;
-  } */
-
-  .modal-details {
-    padding: 24px;
-    max-height: calc(85vh - 250px);
-  }
-
-  .modal-name {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .modal-description {
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  .option-title {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .option-button {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-
-  .option-icon {
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-  }
-
-  .total-label {
-    font-size: 18px;
-  }
-
-  .total-price {
-    font-size: 24px;
-  }
-
-  .modal-close-btn {
-    padding: 14px;
-    font-size: 15px;
-  }
-
-  .close-button {
-    top: 15px;
-    right: 15px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -479,16 +422,108 @@ body {
 @media (max-width: 1200px) {
   .products-grid {
     place-items: center;
-    gap: 0px;
+    /* gap: 0px; */
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
+  .modal-content {
+    max-height: 626px;
+    width: 688px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .modal-image {
+    width: 100%;
+    min-width: 100%;
+    height: 310px;
+    border-radius: 30px;
+    flex-shrink: 0;
+  }
+
+  .modal-details {
+    padding: 0px 24px 0 24px;
+    padding-right: 0px;
+    height: 594px;
+  }
+
+  .modal-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .info-text {
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .modal-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .option-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .option-name {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .option-price {
+    font-size: 16px;
+  }
+
+  .option-button {
+    padding: 8px;
+    font-weight: 600;
+    padding-right: 16px;
+    font-size: 13px;
+  }
+
+  .option-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .total-label {
+    font-size: 24px;
+  }
+
+  .total-price {
+    font-size: 24px;
+  }
+
+  .modal-close-btn {
+    padding: 14px;
+    font-size: 15px;
+    margin-top: 32px;
+  }
+
   .container {
     padding: 0 20px;
   }
-
+  .info-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .menu-header {
+    width: 688px;
+    height: 311px;
+  }
+  .heading {
+    height: 225px;
+    width: 668px;
+    font-size: 60px;
+    margin-top: 10px;
+    padding: 0;
+  }
   nav {
     display: none;
   }
@@ -506,23 +541,25 @@ body {
   }
 
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 344px);
+    /* gap: 40px; */
+    width: 688px;
+    min-height: 1052px;
+    gap: 0px;
+    margin-top: 40px;
+    row-gap: 40px;
+    align-items: start;
+  }
+  .product-card {
+    height: 506px;
+    width: 310px;
   }
 
-  .modal-content {
-    flex-direction: column;
-  }
-
-  .modal-image {
+  /* .modal-image {
     width: 100%;
     height: 250px;
     border-radius: 20px 20px 0 0;
-  }
-
-  .modal-details {
-    padding: 24px;
-  }
+  } */
 
   .footer-content {
     flex-direction: column;

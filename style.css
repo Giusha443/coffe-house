@@ -259,7 +259,7 @@ header {
   opacity: 0;
   transition: all 0.3s ease;
   transform: translateX(-50%);
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .btn:hover {
@@ -680,7 +680,7 @@ footer {
   width: 32px;
   height: 32px;
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .container {
     padding: 0 32px;
   }
@@ -712,10 +712,99 @@ footer {
   .footer-content {
     gap: 60px;
   }
-}
+} */
 .hero-content p {
   opacity: 0.7;
 }
+
+/* @media (max-width: 480px) {
+  .hero {
+    height: 400px;
+    padding: 40px 24px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    padding: 14px 48px;
+    font-size: 14px;
+  }
+
+  .btn:hover {
+    padding-left: 40px;
+    padding-right: 60px;
+  }
+
+  .favorites h2,
+  .about h2,
+  .app-text h2,
+  .footer-info h3 {
+    font-size: 32px;
+  }
+
+  .coffee-card h3 {
+    font-size: 20px;
+  }
+
+  .coffee-card p {
+    font-size: 14px;
+  }
+
+  .coffee-card .price {
+    font-size: 20px;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .parent {
+    grid-template-columns: 1fr;
+  }
+
+  .app-text h2 {
+    font-size: 32px;
+  }
+
+  .app-text p {
+    font-size: 14px;
+  }
+
+  .app-btn {
+    padding: 10px 24px;
+  }
+
+  .social-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-info h3 {
+    font-size: 32px;
+  }
+
+  .footer-contact h4 {
+    font-size: 18px;
+  }
+
+  .contact-item {
+    font-size: 14px;
+  }
+} */
 @media (max-width: 769px) {
   .container {
     padding: 0 40px;
@@ -885,110 +974,116 @@ footer {
     margin-top: 10px;
   }
 }
-
-@media (max-width: 480px) {
+@media (max-width: 380px) {
   .hero {
-    height: 400px;
-    padding: 40px 24px;
+    width: 348px;
+    height: 552px;
+    padding: 60px 16px;
   }
-
-  .hero h1 {
-    font-size: 32px;
-    margin-bottom: 24px;
+  .container {
+    padding: 0 16px;
   }
-
-  .hero p {
-    font-size: 14px;
-    margin-bottom: 24px;
+  .header {
+    padding: 16px auto;
+  }
+  .hero-content h1 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 1.15;
+    font-size: 42px;
   }
 
   .btn {
-    padding: 14px 48px;
-    font-size: 14px;
+    padding: 24px 90px 24px 64px;
   }
-
-  .btn:hover {
-    padding-left: 40px;
-    padding-right: 60px;
+  .hero-content p {
+    font-size: 16px;
+    margin-bottom: 40px;
   }
-
-  .favorites h2,
-  .about h2,
+  h1 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .favorites {
+    width: 348px;
+    h2 {
+      width: 100%;
+    }
+  }
+  .carousel-item {
+    height: 576px;
+  }
+  .about {
+    height: 1580px;
+  }
+  .about-gallery {
+    width: 348px;
+    height: 1220px;
+    gap: 40px;
+  }
+  .about-gallery div {
+    width: 348px;
+    height: 100%;
+  }
+  .mobile-app {
+    height: 768px;
+  }
   .app-text h2,
-  .footer-info h3 {
-    font-size: 32px;
-  }
-
-  .coffee-card h3 {
-    font-size: 20px;
-  }
-
-  .coffee-card p {
-    font-size: 14px;
-  }
-
-  .coffee-card .price {
-    font-size: 20px;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-  }
-
-  .parent {
-    grid-template-columns: 1fr;
-  }
-
-  .app-text h2 {
-    font-size: 32px;
-  }
-
   .app-text p {
-    font-size: 14px;
+    margin-bottom: 40px;
   }
-
+  .app-text h2 {
+    height: 80px;
+  }
+  .app-buttons {
+    width: 200px;
+    height: 148px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .app-images {
+    margin-top: 40px;
+  }
   .app-btn {
-    padding: 10px 24px;
+    padding: 14px 20px;
   }
-
+  .mobile-app {
+    margin-bottom: 100px;
+  }
+  footer {
+    padding: 60px 16px;
+    height: 526px;
+  }
+  .footer-info h3 {
+    margin-bottom: 40px;
+  }
   .social-icon {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
+  }
+  .footer-content {
+    gap: 40px;
+  }
+  .footer-contact {
+    margin-top: 0;
+  }
+  .burger-menu {
+    padding-top: 84px;
+    justify-content: flex-start;
   }
 
-  .social-icon svg {
-    width: 20px;
-    height: 20px;
+  .burger-menu a:last-child {
+    padding-top: 40px;
   }
-
-  .footer-info h3 {
-    font-size: 32px;
-  }
-
-  .footer-contact h4 {
-    font-size: 18px;
-  }
-
-  .contact-item {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 380px) {
-  .hero {
-    padding: 32px 16px;
-    height: 360px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .favorites h2,
-  .about h2,
-  .app-text h2,
-  .footer-info h3 {
-    font-size: 28px;
+  .btn .icon {
+    opacity: 1;
+    left: 65%;
+    /* position: relative; */
   }
 }

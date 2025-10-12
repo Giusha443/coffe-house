@@ -205,8 +205,6 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
 
 .modal-image {
   width: 310px;
-  /* min-width: 310px; */
-  height: 100%;
   object-fit: cover;
   border-radius: 30px;
 }
@@ -389,7 +387,7 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
   color: #e1d4c9;
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .modal-overlay {
     padding: 10px;
   }
@@ -418,14 +416,13 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
   .info-text {
     font-size: 11px;
   }
-}
-@media (max-width: 1200px) {
+} */
+/* @media (max-width: 1200px) {
   .products-grid {
     place-items: center;
-    /* gap: 0px; */
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
 @media (max-width: 769px) {
   .modal-content {
@@ -544,6 +541,8 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
     grid-template-columns: repeat(2, 344px);
     /* gap: 40px; */
     width: 688px;
+    place-items: center;
+
     min-height: 1052px;
     gap: 0px;
     margin-top: 40px;
@@ -568,7 +567,28 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
 }
 
 @media (max-width: 380px) {
-  .menu-header h2 {
+  h1 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  header {
+    padding: 20px 0px;
+  }
+  .menu-header {
+    width: 348px;
+    height: 206px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .category-tabs {
+    margin-top: 40px;
+  }
+  .heading {
+    width: 348px;
+    height: 120px;
     font-size: 32px;
   }
 
@@ -583,5 +603,17 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
 
   .products-grid {
     grid-template-columns: 1fr;
+    width: 348px;
+  }
+  .modal-content {
+    width: 342px;
+    height: 626px;
+    padding: 16px;
+  }
+  .modal-details {
+    padding: 0;
+  }
+  .modal-content img {
+    display: none;
   }
 }

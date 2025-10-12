@@ -318,6 +318,19 @@ window.addEventListener("resize", () => {
   }, 250);
 });
 
+if (window.location.pathname.includes("menu.html")) {
+  const menuLink = document.getElementById("menuLink");
+  if (menuLink) {
+    menuLink.style.pointerEvents = "none";
+    // menuLink.style.opacity = "0.5";
+    menuLink.style.cursor = "default";
+
+    menuLink.addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   loadProducts();
   setupModal();

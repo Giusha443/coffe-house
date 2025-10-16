@@ -3,34 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/png" href="./assets/penguin.png" />
+    <link rel="icon" type="image/png" href="./assets/penguin.png" />
 
     <link rel="stylesheet" href="menu-styles.css" />
-    <link rel="stylesheet" href="style.css" />   
-    <link rel="stylesheet" href="queries.css" />   
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />   <link
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <title>Document</title>
-    
   </head>
   <body>
-     <header>
+    <header>
       <div class="container">
         <div class="header-content">
           <a href="index.html" class="logo">
             <img src="./assets/logo.png" alt="Coffee House Logo" />
           </a>
-        <nav class="navigation">
-  <ul class="nav-links">
-    <li class="nav-link"><a href="index.html#enjoy">Favorite coffee</a></li>
-    <li class="nav-link"><a href="index.html#about">About</a></li>
-    <li class="nav-link"><a href="index.html#mobile-app">Mobile app</a></li>
-    <li class="nav-link"><a href="index.html#contact">Contact us</a></li>
-  </ul>
-</nav>
+          <nav class="navigation">
+            <ul class="nav-links">
+              <li class="nav-link">
+                <a href="index.html#enjoy">Favorite coffee</a>
+              </li>
+              <li class="nav-link"><a href="index.html#about">About</a></li>
+              <li class="nav-link">
+                <a href="index.html#mobile-app">Mobile app</a>
+              </li>
+              <li class="nav-link">
+                <a href="index.html#contact">Contact us</a>
+              </li>
+            </ul>
+          </nav>
           <div class="menu-cup">
             <a href="menu.html" id="menuLink">
               <span>Menu</span>
@@ -79,7 +85,7 @@
         </div>
       </div>
     </header>
- <div class="burger-menu" id="burgerMenu">
+    <div class="burger-menu" id="burgerMenu">
       <a href="index.html#enjoy">Favorite coffee</a>
       <a href="index.html#about">About</a>
       <a href="index.html#mobile-app">Mobile app</a>
@@ -134,15 +140,15 @@
             </h1>
             <div class="category-tabs">
               <button class="category-tab active" data-category="coffee">
-                <img src="assets/coffe.png" class="category-icon" alt="coffe"/>
+                <img src="assets/coffe.png" class="category-icon" alt="coffe" />
                 Coffee
               </button>
               <button class="category-tab" data-category="tea">
-                <img src="assets/dessert.png" class="category-icon" alt="tea">
+                <img src="assets/dessert.png" class="category-icon" alt="tea" />
                 Tea
               </button>
               <button class="category-tab" data-category="dessert">
-                <img src="assets/tea.png" class="category-icon" alt="dessert"></img>
+                <img src="assets/tea.png" class="category-icon" alt="dessert" />
                 Dessert
               </button>
             </div>
@@ -151,11 +157,36 @@
           <div class="products-grid" id="productsGrid"></div>
 
           <div class="load-more-container" id="loadMoreContainer">
-            <button class="load-more-button" id="loadMoreBtn"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-<rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"/>
-<path d="M39.8883 31.5C39.1645 36.3113 35.013 40 30 40C24.4772 40 20 35.5228 20 30C20 24.4772 24.4772 20 30 20C34.1006 20 37.6248 22.4682 39.1679 26" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M35 26H39.4C39.7314 26 40 25.7314 40 25.4V21" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></button>
+            <button class="load-more-button" id="loadMoreBtn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                viewBox="0 0 60 60"
+                fill="none"
+              >
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="59"
+                  height="59"
+                  rx="29.5"
+                  stroke="#665F55"
+                />
+                <path
+                  d="M39.8883 31.5C39.1645 36.3113 35.013 40 30 40C24.4772 40 20 35.5228 20 30C20 24.4772 24.4772 20 30 20C34.1006 20 37.6248 22.4682 39.1679 26"
+                  stroke="#403F3D"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M35 26H39.4C39.7314 26 40 25.7314 40 25.4V21"
+                  stroke="#403F3D"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </section>
 
@@ -163,7 +194,16 @@
         <div class="modal-overlay" id="modalOverlay">
           <div class="modal-content" id="modalContent">
             <!-- <button class="close-button" id="closeButton">&times;</button> -->
-          <div><img class="modal-image" id="modalImage" alt="card image" /></div>  
+            <div>
+              <div>
+                <img
+                  class="modal-image"
+                  id="modalImage"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  alt="Product image"
+                />
+              </div>
+            </div>
             <div class="modal-details">
               <h3 class="modal-name" id="modalName">.</h3>
               <p class="modal-description" id="modalDescription"></p>
@@ -230,7 +270,7 @@
 
               <p class="info-text">
                 <svg
-                class="info-icon"
+                  class="info-icon"
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
@@ -385,9 +425,8 @@
         </footer>
       </div>
     </main>
-    
+
     <script src="menu.js"></script>
     <script src="script.js"></script>
-
- </body>
+  </body>
 </html>

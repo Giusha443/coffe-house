@@ -170,11 +170,29 @@ header {
   font-weight: 600;
   line-height: 1.25;
   transition: color 0.3s ease;
+  position: relative;
 }
 
-.burger-menu a:hover {
-  color: #b89b7f;
+.burger-menu a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #403f3d;
+  transition: transform 0.3s ease;
 }
+
+.burger-menu a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* .burger-menu a:hover {
+  color: #b89b7f;
+} */
 
 /* Hero Section */
 .hero {
@@ -534,7 +552,9 @@ header {
     fill: #e1d4c9;
   }
 }
-
+footer span.italic {
+  color: #b0907a;
+}
 .app-btn .icon {
   width: 36px;
   height: 36px;
@@ -606,7 +626,7 @@ footer {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid #e1d4c9;
+  border: 1px solid #c1b6ad;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -625,7 +645,7 @@ footer {
 }
 
 .social-icon:hover svg {
-  stroke: #665f55;
+  stroke: #403f3d;
 }
 
 .footer-contact {
@@ -715,6 +735,11 @@ footer {
 } */
 .hero-content p {
   opacity: 0.7;
+}
+@media (max-width: 1300px) {
+  .about-gallery {
+    width: 900px;
+  }
 }
 
 /* @media (max-width: 480px) {
@@ -974,11 +999,58 @@ footer {
     margin-top: 10px;
   }
 }
+
+@media (max-width: 900px) {
+  .about-gallery {
+    width: 700px;
+  }
+}
+
+@media (max-width: 750px) {
+  .favorites,
+  .favorites h2 {
+    width: 580px;
+  }
+}
+@media (max-width: 720px) {
+  .hero h1 {
+    font-size: 52px;
+  }
+  .div1,
+  .div4 {
+    width: 550px;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+  .about-gallery {
+    height: 1100px;
+    width: 500px;
+  }
+}
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+  .hero p {
+    font-size: 12px;
+  }
+  .favorites,
+  .favorites h2 {
+    width: 420px;
+  }
+}
 @media (max-width: 380px) {
   .hero {
     width: 348px;
     height: 552px;
     padding: 60px 16px;
+  }
+  .favorites {
+    width: 348px;
+  }
+  .carousel-controls {
+    display: none;
   }
   .container {
     padding: 0 16px;
@@ -1084,6 +1156,7 @@ footer {
     line-height: 1.25;
     width: 316px;
   }
+
   .social-icon {
     width: 60px;
     height: 60px;

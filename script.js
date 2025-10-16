@@ -24,6 +24,17 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    setTimeout(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  }
+});
+
 window.addEventListener("resize", () => {
   if (window.innerWidth > 768) {
     menuIcon.classList.remove("active");

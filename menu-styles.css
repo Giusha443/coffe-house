@@ -44,7 +44,9 @@ body {
 }
 
 .category-tab:hover {
-  background-color: #d4c4b5;
+  background-color: #665f55;
+  color: #e1d4c9;
+  border-color: #665f55;
 }
 
 .category-tab.active {
@@ -423,7 +425,26 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
     grid-template-columns: repeat(2, 1fr);
   }
 } */
-
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+  }
+  .heading {
+    width: 1000px;
+    padding: 0 100px 0;
+  }
+}
+@media (max-width: 920px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+  .heading {
+    width: 720px;
+    padding: 0 20px 0;
+  }
+}
 @media (max-width: 769px) {
   .modal-content {
     max-height: 626px;
@@ -566,6 +587,20 @@ amaze shesaclvelia image size da formas mivce zoma da ara surats +price tag shes
   }
 }
 
+@media (max-width: 700px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    width: 500px;
+  }
+  .menu-header,
+  .heading {
+    width: 500px;
+  }
+  .heading {
+    font-size: 40px;
+    height: 180px;
+  }
+}
 @media (max-width: 380px) {
   h1 {
     font-size: 42px;

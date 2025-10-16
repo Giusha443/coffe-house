@@ -15,13 +15,7 @@ function updateCarousel() {
 
 function updateProgressBars() {
   progressBars.forEach((bar, index) => {
-    if (index === currentIndex) {
-      bar.style.width = "0%";
-    } else if (index < currentIndex) {
-      bar.style.width = "100%";
-    } else {
-      bar.style.width = "0%";
-    }
+    bar.style.width = "0%";
   });
 }
 
